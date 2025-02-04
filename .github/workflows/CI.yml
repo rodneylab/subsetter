@@ -4,7 +4,6 @@
 #    maturin generate-ci github
 #
 name: CI
-
 on:
   push:
     branches:
@@ -14,10 +13,8 @@ on:
       - '*'
   pull_request:
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   linux:
     runs-on: ${{ matrix.platform.runner }}
@@ -53,7 +50,6 @@ jobs:
         with:
           name: wheels-linux-${{ matrix.platform.target }}
           path: dist
-
   musllinux:
     runs-on: ${{ matrix.platform.runner }}
     strategy:
@@ -84,7 +80,6 @@ jobs:
         with:
           name: wheels-musllinux-${{ matrix.platform.target }}
           path: dist
-
   windows:
     runs-on: ${{ matrix.platform.runner }}
     strategy:
@@ -111,7 +106,6 @@ jobs:
         with:
           name: wheels-windows-${{ matrix.platform.target }}
           path: dist
-
   macos:
     runs-on: ${{ matrix.platform.runner }}
     strategy:
@@ -137,7 +131,6 @@ jobs:
         with:
           name: wheels-macos-${{ matrix.platform.target }}
           path: dist
-
   sdist:
     runs-on: ubuntu-latest
     steps:
@@ -152,7 +145,6 @@ jobs:
         with:
           name: wheels-sdist
           path: dist
-
   release:
     name: Release
     runs-on: ubuntu-latest
