@@ -1,0 +1,16 @@
+Brotli==1.1.0 \
+  --hash=sha256:7bc37c4d6b87fb1017ea28c9508b36bbcb0c3d18b4260fcdf08b200c74a6aee8
+coverage==7.6.10 \
+  --hash=sha256:05fca8ba6a87aabdd2d30d0b6c838b50510b56cdcfc604d40760dae7153b73d9
+fonttools==4.55.3 \
+  --hash=sha256:529cef2ce91dc44f8e407cc567fae6e49a1786f2fefefa73a294704c415322a4
+maturin==1.8.1 \
+  --hash=sha256:b9fc1a4354cac5e32c190410208039812ea88c4a36bd2b6499268ec49ef5de00
+mypy==1.14.1 \
+  --hash=sha256:92c3ed5afb06c3a8e188cb5da4984cab9ec9a77ba956ee419c68a388b4595255
+mypy-extensions==1.0.0 \
+  --hash=sha256:4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d
+pyperclip==1.9.0 \
+  --hash=sha256:b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310
+pyperclip-stubs==0.0.2 \
+  --hash=sha256:b5cf9dc188da7b491bbb31a96d13f11811d8b904b5e271cd65d148b1f13a2f4a

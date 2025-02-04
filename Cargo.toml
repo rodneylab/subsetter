@@ -1,0 +1,30 @@
+[package]
+name = "subsetter"
+version = "0.1.0"
+edition = "2021"
+license = "BSD-3-Clause"
+repository = "https://github.com/rodneylab/subsetter"
+description = "Web Development-focussed CLI tool for generating font subsets"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "subsetter"
+crate-type = ["cdylib"] # for Rust from Python
+
+# [[bin]]
+# path = "src/main.rs"
+# name = "subsetter"
+
+[dependencies]
+anyhow = "1.0.95"
+base64 = "0.22.1"
+clap = { version = "4.5.27", features = ["derive"] }
+clap-verbosity-flag = "3.0.2"
+env_logger = "0.11.6"
+log = "0.4.25"
+# pyo3 = "0.23.3" # for Rust from Python
+xxhash-rust = { version = "0.8.15", features = ["xxh3"] }
+
+[dependencies.pyo3] # for Python from Rust
+version = "0.23.4"
+features = ["auto-initialize"]
