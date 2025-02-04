@@ -1,10 +1,7 @@
 {
-  "json": {
-  },
-  "markdown": {
-  },
-  "toml": {
-  },
+  "json": {},
+  "markdown": {},
+  "toml": {},
   "excludes": [
     "**/*-lock.json",
     "supply-chain/audits.toml",
