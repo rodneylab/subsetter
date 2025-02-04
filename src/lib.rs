@@ -13,7 +13,7 @@ use domain::{font_face, hash, unicodes, FontFaceParameters};
 
 #[pyfunction]
 #[pyo3(name = "font_face")]
-#[expect(clippy::needless_pass_by_value)]
+#[allow(clippy::needless_pass_by_value)]
 fn font_face_py(
     font_family: &str,
     font_weight: u32,

@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 license = "BSD-3-Clause"
 repository = "https://github.com/rodneylab/subsetter"
+# project uses Cargo lock file version 4, stable from 1.78.0
+rust-version = "1.78.0"
 description = "Web Development-focussed CLI tool for generating font subsets"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

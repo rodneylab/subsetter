@@ -25,6 +25,7 @@ instructions so we can reproduce. Please also list any relevant details for your
 test configuration
 
 - [ ] cargo test run with all tests passing
+- [ ] python -m unittest -v tests/test_subsetter_tool.py
 
 **Test Configuration**:
 
