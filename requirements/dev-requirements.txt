@@ -1,5 +1,5 @@
 Brotli==1.1.0 \
-  --hash=sha256:d0c5516f0aed654134a2fc936325cc2e642f8a0e096d075209672eb321cff408
+  --hash=sha256:7bc37c4d6b87fb1017ea28c9508b36bbcb0c3d18b4260fcdf08b200c74a6aee8
 coverage==7.6.10 \
   --hash=sha256:05fca8ba6a87aabdd2d30d0b6c838b50510b56cdcfc604d40760dae7153b73d9
 fonttools==4.55.3 \
