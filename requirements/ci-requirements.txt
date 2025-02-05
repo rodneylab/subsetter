@@ -15,4 +15,4 @@ pyperclip==1.9.0 \
 pyperclip-stubs==0.0.2 \
   --hash=sha256:b5cf9dc188da7b491bbb31a96d13f11811d8b904b5e271cd65d148b1f13a2f4a
 typing_extensions==4.6.0 \
-  --hash=sha256:ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0aaaa
+  --hash=sha256:6ad00b63f849b7dcc313b70b6b304ed67b2b2963b3098a33efe18056b1a9a223
