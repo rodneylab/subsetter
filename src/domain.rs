@@ -205,3 +205,20 @@ pub fn unicodes(text: &str) -> String {
 
     ranges_string
 }
+
+#[cfg(test)]
+mod tests {
+    use super::hash;
+
+    #[test]
+    fn hash_generates_expected_result_for_valid_input() {
+        // arrange
+        let text = "Halloa!";
+
+        // act
+        let result = hash(text);
+
+        // assert
+        assert_eq!(result, String::from("69178b77"));
+    }
+}

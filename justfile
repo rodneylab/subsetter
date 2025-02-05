@@ -12,11 +12,26 @@ test:
 
 # run python coverage using coverage
 coverage:
+    # Python coverage
     python3 -m coverage run -m unittest tests/test_subsetter_tool.py
     python3 -m coverage report
     python3 -m coverage html
     python3 -m coverage lcov
     python3 -m coverage xml
+
+    # Rust coverage
+    rm -f subsetter-*.profraw 2>/dev/null
+    cargo clean
+    cargo build
+    C_COMPILER=$(brew --prefix llvm)/bin/clang RUSTFLAGS="-Cinstrument-coverage" \
+        LLVM_PROFILE_FILE="subsetter-%p-%m.profraw" cargo test
+    grcov . -s . --binary-path ./target/debug/ -t html --branch --ignore-not-existing \
+        -o ./target/debug/coverage/
+    open --reveal ./target/debug/coverage
+    sed -i '' "s|href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css\"|href=\"file://`pwd`/.cache/bulma.min.css\"|g" ./target/debug/coverage/**/*.html
+    mkdir -p .cache
+    curl --time-cond .cache/bulma.min.css -C - -Lo .cache/bulma.min.css \
+      https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css
 
 # generate docs for a crate and copy link to clipboard
 doc crate:
