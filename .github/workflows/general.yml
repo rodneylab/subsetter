@@ -100,7 +100,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           pip install -r "requirements/ci-requirements.txt" --require-hashes
-          python -m coverage run -m unittest tests/test_subsetter_tool.pytho
+          python -m coverage run -m unittest tests/test_subsetter_tool.py
           python -m coverage xml
       - uses: dtolnay/rust-toolchain@38b70195107dddab2c7bbd522bcf763bac00963b # stable
         with:
