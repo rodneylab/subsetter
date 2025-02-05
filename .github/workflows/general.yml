@@ -99,7 +99,7 @@ jobs:
       - uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
       - name: Install Python dependencies
         run: |
-          pip install -r requirements/ci-requirements.txt --require-hashes
+          pip install -r "requirements/ci-requirements.txt" --require-hashes
           python -m coverage run -m unittest tests/test_subsetter_tool.pytho
           python -m coverage xml
       - uses: dtolnay/rust-toolchain@38b70195107dddab2c7bbd522bcf763bac00963b # stable
