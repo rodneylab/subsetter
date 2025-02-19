@@ -10,6 +10,10 @@ import sys
 from subsetter import font_face, hash
 
 
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
+
+
 def get_subset_font_path(input_path: Path, hash: str, format: str) -> Path:
     input_filename = Path(input_path.name).stem
     output_filename_str = "{}__subset_{}.{}".format(input_filename, hash, format)
@@ -34,7 +38,13 @@ def write_subset_font(
     else:
         options = subset.Options()
 
-    font = subset.load_font(input_path, options)
+    try:
+        font = subset.load_font(input_path, options)
+    except FileNotFoundError:
+        message = "\n[ Error ] Missing input font file `{}`".format(input_path)
+        eprint(message)
+        raise FileNotFoundError(message)
+
     fonttools_subsetter = subset.Subsetter(options)
     fonttools_subsetter.populate(text=text)
     fonttools_subsetter.subset(font)
@@ -47,9 +57,13 @@ def write_subset_font_file_for_format(font_file_path_str: str, text: str, hash: 
     extension = Path(font_file_path_str).suffix
     format = extension[1:]
     if format == "woff2" or format == "woff" or format == "ttf":
-        subset_file_path = write_subset_font(
-            Path(font_file_path_str), text, hash, format
-        )
+        try:
+            subset_file_path = write_subset_font(
+                Path(font_file_path_str), text, hash, format
+            )
+        except FileNotFoundError:
+            sys.exit(1)
+
         return subset_file_path
 
     print("Unrecognised file format for font file {}".format(font_file_path_str))
