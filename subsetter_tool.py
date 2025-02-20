@@ -48,8 +48,15 @@ def write_subset_font(
     fonttools_subsetter = subset.Subsetter(options)
     fonttools_subsetter.populate(text=text)
     fonttools_subsetter.subset(font)
-    subset.save_font(font, output_path, options)
+    try:
+        subset.save_font(font, output_path, options)
+    except PermissionError:
+        message = f"\n[ Error ] Unable to write font file `{output_path}`.  Check the "
+        "path exists with write permissions."
+        eprint(message)
+        raise PermissionError(message)
     print("Wrote {} subset to {}".format(format, str(output_path)))
+
     return str(output_path)
 
 
@@ -62,6 +69,8 @@ def write_subset_font_file_for_format(font_file_path_str: str, text: str, hash: 
                 Path(font_file_path_str), text, hash, format
             )
         except FileNotFoundError:
+            sys.exit(1)
+        except PermissionError:
             sys.exit(1)
 
         return subset_file_path
