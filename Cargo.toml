@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 license = "BSD-3-Clause"
 repository = "https://github.com/rodneylab/subsetter"
-# project uses Cargo lock file version 4, stable from 1.78.0
+# 2024 Rust edition requires 1.85.0
 rust-version = "1.85.0"
 description = "Web Development-focussed CLI tool for generating font subsets"
 
