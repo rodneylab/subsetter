@@ -3,13 +3,14 @@
 mod domain;
 
 use pyo3::{
+    Bound, PyErr, PyResult,
     exceptions::PyValueError,
     pyfunction, pymodule,
     types::{PyModule, PyModuleMethods},
-    wrap_pyfunction, Bound, PyErr, PyResult,
+    wrap_pyfunction,
 };
 
-use domain::{font_face, hash, unicodes, FontFaceParameters};
+use domain::{FontFaceParameters, font_face, hash, unicodes};
 
 #[pyfunction]
 #[pyo3(name = "font_face")]

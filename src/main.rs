@@ -1,9 +1,9 @@
 #![warn(clippy::all, clippy::pedantic)]
 
 use pyo3::{
+    PyResult, Python,
     ffi::c_str,
     types::{IntoPyDict, PyAnyMethods},
-    PyResult, Python,
 };
 
 fn main() -> PyResult<()> {

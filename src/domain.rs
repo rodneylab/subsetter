@@ -4,7 +4,7 @@ use std::{
 };
 
 use anyhow::bail;
-use base64::{prelude::BASE64_STANDARD, Engine};
+use base64::{Engine, prelude::BASE64_STANDARD};
 use xxhash_rust::xxh3::xxh3_64;
 
 const BITS_TO_POP: u32 = 32;
