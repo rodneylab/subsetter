@@ -75,9 +75,9 @@ def write_subset_font_file_for_format(font_file_path_str: str, text: str, hash: 
 
         return subset_file_path
 
-    print("Unrecognised file format for font file {}".format(font_file_path_str))
-
-    return ""
+    message = "Unrecognised file format for font file {}".format(font_file_path_str)
+    eprint(message)
+    raise ValueError(message)
 
 
 def main():
