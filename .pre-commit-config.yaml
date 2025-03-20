@@ -37,3 +37,11 @@ repos:
         id: cargo-deny
     repo: https://github.com/EmbarkStudios/cargo-deny
     rev: 0.18.2
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.11.0
+    hooks:
+      # Run the linter.
+      - id: ruff
+      # Run the formatter.
+      - id: ruff-format
