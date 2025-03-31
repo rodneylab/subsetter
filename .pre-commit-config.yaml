@@ -11,10 +11,10 @@ repos:
       - id: clippy
     repo: https://github.com/doublify/pre-commit-rust
     rev: v1.0
-  - hooks:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.24.2
+    hooks:
       - id: gitleaks
-    repo: https://github.com/gitleaks/gitleaks
-    rev: v8.24.0
   - hooks:
       - id: yamlfmt
     repo: https://github.com/google/yamlfmt
