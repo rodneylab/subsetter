@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3 -tt
 # -*- coding: utf-8 -*-
 
-from typing import Literal
+from typing import Literal, get_args
 import argparse
 from fontTools import subset
 from pathlib import Path
@@ -63,7 +63,7 @@ def write_subset_font(
 def write_subset_font_file_for_format(font_file_path_str: str, text: str, hash: str):
     extension = Path(font_file_path_str).suffix
     format = extension[1:]
-    if format == "woff2" or format == "woff" or format == "ttf":
+    if format in get_args(Literal["woff2", "woff", "ttf"]):
         try:
             subset_file_path = write_subset_font(
                 Path(font_file_path_str), text, hash, format
