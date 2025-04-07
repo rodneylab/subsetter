@@ -1,3 +1,6 @@
+default:
+    just --list
+
 # find comments in Rust source
 comments:
     rg --pcre2 -t rust '(^|\s+)(\/\/|\/\*)\s+(?!(act|arrange|assert))' .
