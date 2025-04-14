@@ -18,7 +18,7 @@ crate-type = ["cdylib"] # for Rust from Python
 # name = "subsetter"
 
 [dependencies]
-anyhow = "1.0.97"
+anyhow = "1.0.98"
 base64 = "0.22.1"
 clap = { version = "4.5.35", features = ["derive"] }
 clap-verbosity-flag = "3.0.2"
