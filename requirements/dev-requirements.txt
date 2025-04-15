@@ -168,6 +168,6 @@ pyperclip==1.9.0 \
   --hash=sha256:b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310
 pyperclip-stubs==0.0.2 \
   --hash=sha256:b5cf9dc188da7b491bbb31a96d13f11811d8b904b5e271cd65d148b1f13a2f4a
-typing_extensions==4.13.1 \
-  --hash=sha256:4b6cf02909eb5495cfbc3f6e8fd49217e6cc7944e145cdda8caa3734777f9e69 \
-  --hash=sha256:98795af00fb9640edec5b8e31fc647597b4691f099ad75f469a2616be1a76dff
+typing_extensions==4.13.2 \
+  --hash=sha256:a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c \
+  --hash=sha256:e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef
