@@ -31,12 +31,14 @@ repos:
     repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
   - hooks:
-      - args:
-          - --all-features
-          - check
-        id: cargo-deny
+      - id: cargo-deny
+        args: ["--all-features", "check"]
     repo: https://github.com/EmbarkStudios/cargo-deny
     rev: 0.18.2
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.31.1
+    hooks:
+      - id: typos
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Ruff version.
     rev: v0.11.0
