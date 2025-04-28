@@ -24,9 +24,9 @@ clap = { version = "4.5.37", features = ["derive"] }
 clap-verbosity-flag = "3.0.2"
 env_logger = "0.11.8"
 log = "0.4.27"
-# pyo3 = "0.24.1" # for Rust from Python
+# pyo3 = "0.24.2" # for Rust from Python
 xxhash-rust = { version = "0.8.15", features = ["xxh3"] }
 
 [dependencies.pyo3] # for Python from Rust
-version = "0.24.1"
+version = "0.24.2"
 features = ["auto-initialize"]
