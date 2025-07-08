@@ -35,7 +35,7 @@ jobs:
             target: ppc64le
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
@@ -44,7 +44,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Build wheels
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -70,7 +70,7 @@ jobs:
             target: armv7
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
@@ -79,7 +79,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Build wheels
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -101,7 +101,7 @@ jobs:
             target: x86
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
@@ -111,7 +111,7 @@ jobs:
           python-version: 3.x
           architecture: ${{ matrix.platform.target }}
       - name: Build wheels
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -132,7 +132,7 @@ jobs:
             target: aarch64
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
@@ -141,7 +141,7 @@ jobs:
         with:
           python-version: 3.x
       - name: Build wheels
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -155,13 +155,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Build sdist
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         with:
           command: sdist
           args: --out dist
@@ -184,18 +184,18 @@ jobs:
       attestations: write
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        uses: step-security/harden-runner@6c439dc8bdf85cadbbce9ed30d1c7b959517bc49 # v2.12.2
         with:
           egress-policy: audit
           disable-telemetry: true
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
       - name: Generate artifact attestation
-        uses: actions/attest-build-provenance@db473fddc028af60658334401dc6fa3ffd8669fd # v2.3.0
+        uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be # v2.4.0
         with:
           subject-path: 'wheels-*/*'
       - name: Publish to PyPI
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
-        uses: PyO3/maturin-action@aef21716ff3dcae8a1c301d23ec3e4446972a6e3 # v1.49.1
+        uses: PyO3/maturin-action@e10f6c464b90acceb5f640d31beda6d586ba7b4a # v1.49.3
         env:
           MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
         with:
