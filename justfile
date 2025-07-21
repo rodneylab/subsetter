@@ -39,7 +39,8 @@ coverage:
 # generate docs for a crate and copy link to clipboard
 doc crate:
     cargo doc -p {{ crate }}
-    @echo "`pwd`/target/doc/{{ crate }}/index.html" | pbcopy
+    @echo "`pwd`/target/doc/`echo \"{{ crate }}\" | tr - _ \
+        | sed 's/^rust_//' `/index.html" | pbcopy
 
 # build Python module from Rust source
 generate-python:
