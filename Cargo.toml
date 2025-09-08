@@ -28,5 +28,5 @@ log = "0.4.27"
 xxhash-rust = { version = "0.8.15", features = ["xxh3"] }
 
 [dependencies.pyo3] # for Python from Rust
-version = "0.25.1"
+version = "0.26.0"
 features = ["auto-initialize"]
