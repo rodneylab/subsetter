@@ -221,8 +221,9 @@ mypy==1.18.2 \
 mypy-extensions==1.1.0 \
   --hash=sha256:1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505 \
   --hash=sha256:52e68efc3284861e772bbcd66823fde5ae21fd2fdb51c62a211403730b916558
-pyperclip==1.9.0 \
-  --hash=sha256:b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310
+pyperclip==1.11.0 \
+  --hash=sha256:244035963e4428530d9e3a6101a1ef97209c6825edab1567beac148ccc1db1b6 \
+  --hash=sha256:299403e9ff44581cb9ba2ffeed69c7aa96a008622ad0c46cb575ca75b5b84273
 pyperclip-stubs==0.0.2 \
   --hash=sha256:b5cf9dc188da7b491bbb31a96d13f11811d8b904b5e271cd65d148b1f13a2f4a
 typing_extensions==4.15.0 \
