@@ -22,7 +22,7 @@ anyhow = "1.0.102"
 base64 = "0.22.1"
 clap = { version = "4.5.60", features = ["derive"] }
 clap-verbosity-flag = "3.0.4"
-env_logger = "0.11.9"
+env_logger = "0.11.10"
 log = "0.4.29"
 # pyo3 = "0.28.2" # for Rust from Python
 xxhash-rust = { version = "0.8.15", features = ["xxh3"] }
