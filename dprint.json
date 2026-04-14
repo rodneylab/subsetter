@@ -6,7 +6,7 @@
   "toml": {
   },
   "excludes": [
-    "**/*-lock.json"
+    "**/*-lock.json",
     "supply-chain/audits.toml",
     "supply-chain/config.toml"
   ],
