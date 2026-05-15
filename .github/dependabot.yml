@@ -4,6 +4,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 1
   - package-ecosystem: cargo
     directory: /
     schedule:
@@ -12,3 +14,5 @@ updates:
     directory: requirements/
     schedule:
       interval: weekly
+    cooldown:
+      default-days: 1
