@@ -1,8 +1,8 @@
-from pathlib import Path
 import hashlib
 import os
 import stat
 import unittest
+from pathlib import Path
 
 from subsetter_tool import (
     get_subset_font_path,
