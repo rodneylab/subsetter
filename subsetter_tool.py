@@ -1,12 +1,14 @@
 #!/usr/local/bin/python3 -tt
 # -*- coding: utf-8 -*-
 
-from typing import Literal, get_args
 import argparse
-from fontTools import subset
-from pathlib import Path
-import pyperclip as pc
 import sys
+from pathlib import Path
+from typing import Literal, get_args
+
+import pyperclip as pc
+from fontTools import subset
+
 from subsetter import font_face, hash
 
 
@@ -21,12 +23,19 @@ def get_subset_font_path(input_path: Path, hash: str, format: str) -> Path:
     return Path(".").joinpath(output_filename_str)
 
 
+SupportedFontFormats = Literal["ttf", "woff", "woff2"]
+
+
 def write_subset_font(
     input_path: Path,
     text: str,
     hash: str,
-    format: Literal["ttf", "woff", "woff2"],
+    format: str,
 ):
+    if format not in get_args(SupportedFontFormats):
+        message = "Unrecognised file format for font file {}".format(input_path)
+        eprint(message)
+        raise ValueError(message)
     try:
         output_path = get_subset_font_path(input_path, hash, format)
     except TypeError as e:
@@ -63,21 +72,16 @@ def write_subset_font(
 def write_subset_font_file_for_format(font_file_path_str: str, text: str, hash: str):
     extension = Path(font_file_path_str).suffix
     format = extension[1:]
-    if format in get_args(Literal["woff2", "woff", "ttf"]):
-        try:
-            subset_file_path = write_subset_font(
-                Path(font_file_path_str), text, hash, format
-            )
-        except FileNotFoundError:
-            sys.exit(1)
-        except PermissionError:
-            sys.exit(1)
+    try:
+        subset_file_path = write_subset_font(
+            Path(font_file_path_str), text, hash, format
+        )
+    except FileNotFoundError:
+        sys.exit(1)
+    except PermissionError:
+        sys.exit(1)
 
-        return subset_file_path
-
-    message = "Unrecognised file format for font file {}".format(font_file_path_str)
-    eprint(message)
-    raise ValueError(message)
+    return subset_file_path
 
 
 def main():
